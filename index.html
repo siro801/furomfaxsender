@@ -8,24 +8,18 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f0f2f5;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem 1rem;
-    direction: rtl;
+    background: #f0f2f5; min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; padding: 2rem 1rem; direction: rtl;
   }
   .app { width: 100%; max-width: 560px; flex: 1; }
   .header { text-align: center; margin-bottom: 1.5rem; }
   .header h1 { font-size: 1.5rem; font-weight: 700; color: #1a1a2e; }
   .header p { font-size: 0.875rem; color: #6b7280; margin-top: 0.25rem; }
   .card {
-    background: #fff;
-    border-radius: 16px;
+    background: #fff; border-radius: 16px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-    padding: 1.75rem;
-    margin-bottom: 1rem;
+    padding: 1.75rem; margin-bottom: 1rem;
   }
   .card-title {
     font-size: 0.8rem; font-weight: 700;
@@ -34,36 +28,21 @@
   }
   .field { margin-bottom: 1.1rem; }
   label { display: block; font-size: 0.875rem; font-weight: 600; color: #374151; margin-bottom: 0.4rem; }
-  .input-wrap { position: relative; display: flex; align-items: center; }
-  .input-wrap input {
-    width: 100%; padding: 0.65rem 0.875rem;
-    border: 1.5px solid #e5e7eb; border-radius: 10px;
-    font-size: 0.9rem; color: #111827; background: #f9fafb;
-    transition: border-color 0.15s, box-shadow 0.15s;
-    outline: none; direction: ltr; text-align: right;
-  }
-  .input-wrap input:focus {
-    border-color: #4f46e5;
-    box-shadow: 0 0 0 3px rgba(79,70,229,0.12);
-    background: #fff;
-  }
-  .suffix {
-    position: absolute; left: 0.875rem;
-    font-size: 0.85rem; color: #9ca3af;
-    pointer-events: none;
-  }
-  input[type="text"], input[type="datetime-local"] {
+  input[type="text"], input[type="password"], input[type="datetime-local"] {
     width: 100%; padding: 0.65rem 0.875rem;
     border: 1.5px solid #e5e7eb; border-radius: 10px;
     font-size: 0.9rem; color: #111827; background: #f9fafb;
     transition: border-color 0.15s; outline: none;
     direction: ltr; text-align: right;
   }
-  input[type="text"]:focus, input[type="datetime-local"]:focus {
+  input:focus {
     border-color: #4f46e5;
     box-shadow: 0 0 0 3px rgba(79,70,229,0.12);
     background: #fff;
   }
+  .input-wrap { position: relative; display: flex; align-items: center; }
+  .input-wrap input { padding-left: 5rem; }
+  .suffix { position: absolute; left: 0.875rem; font-size: 0.85rem; color: #9ca3af; pointer-events: none; }
   .hint { font-size: 0.78rem; color: #9ca3af; margin-top: 0.3rem; }
   .file-zone {
     border: 2px dashed #d1d5db; border-radius: 12px;
@@ -84,22 +63,22 @@
     flex: 1; padding: 0.6rem;
     border: 1.5px solid #e5e7eb; border-radius: 10px;
     font-size: 0.875rem; font-weight: 600;
-    cursor: pointer; background: #f9fafb;
-    color: #6b7280; transition: all 0.15s;
+    cursor: pointer; background: #f9fafb; color: #6b7280; transition: all 0.15s;
   }
   .toggle-btn.active { background: #4f46e5; border-color: #4f46e5; color: #fff; }
   .datetime-field { display: none; }
   .datetime-field.show { display: block; }
-  .send-btn {
+  .btn {
     width: 100%; padding: 0.875rem;
     background: #4f46e5; color: #fff;
     border: none; border-radius: 12px;
     font-size: 1rem; font-weight: 700;
-    cursor: pointer; transition: all 0.15s;
-    margin-top: 0.5rem;
+    cursor: pointer; transition: all 0.15s; margin-top: 0.5rem;
   }
-  .send-btn:hover:not(:disabled) { background: #4338ca; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79,70,229,0.3); }
-  .send-btn:disabled { background: #c4c4cf; cursor: not-allowed; }
+  .btn:hover:not(:disabled) { background: #4338ca; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(79,70,229,0.3); }
+  .btn:disabled { background: #c4c4cf; cursor: not-allowed; }
+  .btn.secondary { background: #f3f4f6; color: #374151; margin-top: 0.5rem; }
+  .btn.secondary:hover { background: #e5e7eb; transform: none; box-shadow: none; }
   .spinner {
     display: none; width: 18px; height: 18px;
     border: 2px solid rgba(255,255,255,0.4);
@@ -117,13 +96,14 @@
   .toast.success { display: flex; background: #ecfdf5; color: #065f46; border: 1.5px solid #a7f3d0; }
   .toast.error { display: flex; background: #fef2f2; color: #991b1b; border: 1.5px solid #fecaca; }
   .toast-icon { font-size: 1.25rem; flex-shrink: 0; }
-  .tag {
-    display: inline-block; padding: 2px 8px; border-radius: 6px;
-    font-size: 0.75rem; font-weight: 600;
-    background: #eef2ff; color: #4f46e5; margin-right: 0.4rem;
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem; font-weight: 600; background: #eef2ff; color: #4f46e5; margin-right: 0.4rem; }
+  .logged-in-bar {
+    display: none; align-items: center; justify-content: space-between;
+    background: #eef2ff; border-radius: 10px;
+    padding: 0.6rem 1rem; margin-bottom: 1rem; font-size: 0.875rem;
   }
-  .config-link { text-align: center; margin-top: 0.75rem; font-size: 0.8rem; color: #9ca3af; }
-  .config-link a { color: #6b7280; text-decoration: none; border-bottom: 1px dashed #d1d5db; }
+  .logged-in-bar span { color: #4f46e5; font-weight: 600; }
+  .logout-btn { background: none; border: none; color: #9ca3af; cursor: pointer; font-size: 0.8rem; text-decoration: underline; }
   footer {
     width: 100%; max-width: 560px;
     text-align: center; padding: 1.5rem;
@@ -132,6 +112,7 @@
   }
   footer strong { color: #4f46e5; }
   footer a { color: #4f46e5; text-decoration: none; }
+  
 </style>
 </head>
 <body>
@@ -139,63 +120,65 @@
 <div class="app">
   <div class="header">
     <h1>📠 שליחת פקס</h1>
-    <p>מחובר ל-InterFAX API</p>
+    <p>מחובר ל-InterFAX</p>
   </div>
 
-  <div class="card">
-    <p class="card-title">קובץ לשליחה</p>
-    <div class="file-zone" id="fileZone">
-      <input type="file" id="pdfFile" accept=".pdf,application/pdf">
-      <div class="file-icon">📄</div>
-      <p>גרור PDF לכאן או לחץ לבחירה</p>
-      <p class="file-name" id="fileName"></p>
-    </div>
-  </div>
+  <!-- מסך ראשי -->
+  <div id="mainApp">
 
-  <div class="card">
-    <p class="card-title">פרטי השליחה</p>
-    <div class="field">
-      <label for="faxNumber">מספר פקס</label>
-      <div class="input-wrap">
-        <input type="text" id="faxNumber" placeholder="0391234567" style="padding-left:5rem;" />
-        <span class="suffix">@fax.tc</span>
+    <div class="card">
+      <p class="card-title">קובץ לשליחה</p>
+      <div class="file-zone" id="fileZone">
+        <input type="file" id="pdfFile" accept=".pdf,application/pdf">
+        <div class="file-icon">📄</div>
+        <p>גרור PDF לכאן או לחץ לבחירה</p>
+        <p class="file-name" id="fileName"></p>
       </div>
-      <p class="hint">הכניסי מספר פקס בלבד - הסיומת תתווסף אוטומטית</p>
     </div>
-    <div class="field">
-      <label for="csid">CSID <span class="tag">טקסט שיופיע במסמך</span></label>
-      <input type="text" id="csid" placeholder="שם החברה שלך" maxlength="20"/>
-      <p class="hint">עד 20 תווים</p>
+
+    <div class="card">
+      <p class="card-title">פרטי השליחה</p>
+      <div class="field">
+        <label for="faxNumber">מספר פקס</label>
+        <div class="input-wrap">
+          <input type="text" id="faxNumber" placeholder="0391234567" />
+          <span class="suffix">@fax.tc</span>
+        </div>
+        <p class="hint">הכניסי מספר בלבד - הסיומת תתווסף אוטומטית</p>
+      </div>
+      <div class="field">
+        <label for="csid">CSID <span class="tag">טקסט שיופיע במסמך</span></label>
+        <input type="text" id="csid" placeholder="שם החברה שלך" maxlength="20"/>
+        <p class="hint">עד 20 תווים</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <p class="card-title">תזמון שליחה</p>
+      <div class="schedule-toggle">
+        <button class="toggle-btn active" id="btnImmediate" onclick="setSchedule('immediate')">⚡ מיידי</button>
+        <button class="toggle-btn" id="btnScheduled" onclick="setSchedule('scheduled')">🕐 זמן אחר</button>
+      </div>
+      <div class="datetime-field" id="datetimeField">
+        <label for="sendTime">מועד שליחה</label>
+        <input type="datetime-local" id="sendTime" />
+      </div>
+    </div>
+
+    <button class="btn" id="sendBtn" onclick="sendFax()">
+      <span id="btnText">שלח פקס</span>
+      <div class="spinner" id="spinner"></div>
+    </button>
+
+    <div class="toast success" id="toastSuccess">
+      <span class="toast-icon">✅</span>
+      <span id="successMsg">הפקס נשלח בהצלחה!</span>
+    </div>
+    <div class="toast error" id="toastError">
+      <span class="toast-icon">❌</span>
+      <span id="errorMsg">שגיאה בשליחה</span>
     </div>
   </div>
-
-  <div class="card">
-    <p class="card-title">תזמון שליחה</p>
-    <div class="schedule-toggle">
-      <button class="toggle-btn active" id="btnImmediate" onclick="setSchedule('immediate')">⚡ מיידי</button>
-      <button class="toggle-btn" id="btnScheduled" onclick="setSchedule('scheduled')">🕐 זמן אחר</button>
-    </div>
-    <div class="datetime-field" id="datetimeField">
-      <label for="sendTime">מועד שליחה</label>
-      <input type="datetime-local" id="sendTime" />
-    </div>
-  </div>
-
-  <button class="send-btn" id="sendBtn" onclick="sendFax()">
-    <span id="btnText">שלח פקס</span>
-    <div class="spinner" id="spinner"></div>
-  </button>
-
-  <div class="toast success" id="toastSuccess">
-    <span class="toast-icon">✅</span>
-    <span id="successMsg">הפקס נשלח בהצלחה!</span>
-  </div>
-  <div class="toast error" id="toastError">
-    <span class="toast-icon">❌</span>
-    <span id="errorMsg">שגיאה בשליחה</span>
-  </div>
-
-  <p class="config-link">הגדרות חשבון נטענות מ-<a href="interfax-config.json" target="_blank">interfax-config.json</a></p>
 </div>
 
 <footer>
@@ -204,16 +187,12 @@
 </footer>
 
 <script>
-let config = { username: '', password: '', replyAddress: '' };
+const config = {
+  username: "KUPOT1",
+  password: "bQcHg2bJGuvSNA#",
+  replyAddress: "info@sirosystems.com"
+};
 let scheduleMode = 'immediate';
-
-async function loadConfig() {
-  try {
-    const r = await fetch('interfax-config.json');
-    if (r.ok) config = await r.json();
-  } catch(e) {}
-}
-loadConfig();
 
 const fileZone = document.getElementById('fileZone');
 const pdfFile = document.getElementById('pdfFile');
@@ -268,8 +247,6 @@ async function sendFax() {
 
   if (!file) return showToast('error', 'יש לבחור קובץ PDF');
   if (!rawNumber) return showToast('error', 'יש להזין מספר פקס');
-  if (!config.username || config.username === 'YOUR_INTERFAX_USERNAME')
-    return showToast('error', 'יש להגדיר פרטי חשבון ב-interfax-config.json');
 
   setLoading(true);
   document.getElementById('toastSuccess').style.display = 'none';
@@ -296,7 +273,7 @@ async function sendFax() {
       const faxId = location.split('/').pop();
       const scheduled = scheduleMode === 'scheduled' && sendTime
         ? ` | מתוזמן ל: ${new Date(sendTime).toLocaleString('he-IL')}` : '';
-      showToast('success', `✅ הפקס נשלח ל-${faxEmail} | מזהה: ${faxId}${scheduled}`);
+      showToast('success', `הפקס נשלח ל-${faxEmail} | מזהה: ${faxId}${scheduled}`);
     } else {
       const text = await response.text().catch(() => '');
       showToast('error', `שגיאה ${response.status}: ${text || response.statusText}`);
